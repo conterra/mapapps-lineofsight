@@ -15,9 +15,15 @@
  */
 module.exports = {
     root: {
-        bundleName: "Hello World",
-        bundleDescription: "This bundle prints Hello.",
-        hello: "Hello World"
+        bundleName: "LineOfSight",
+        bundleDescription: "The LineOfSight widget is a 3D analysis tool that allows you to perform visibility analysis in a SceneView. Visibility between a given observer and multiple target points is calculated against the currently displayed content in the view, including ground, integrated meshes and 3D objects such as buildings or trees.",
+        ui: {
+            windowTitle: "LineOfSight",
+        },
+        tool: {
+            title: "LineOfSight",
+            tooltip: "LineOfSight",
+        }
     },
     de: true
 };

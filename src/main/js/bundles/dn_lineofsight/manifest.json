@@ -1,0 +1,123 @@
+{
+    "name": "dn_lineofsight",
+    "version": "1.0.0-SNAPSHOT",
+    "title": "${bundleName}",
+    "description": "${bundleDescription}",
+    "vendor": "con terra GmbH",
+    "keywords": [
+        "sample"
+    ],
+    "icon": {},
+    "license": {},
+    "productName": "devnet-mapapps-lineofsight",
+    "dependencies": {
+        "esri": "^4.14.0",
+        "esri-widgets": "^4.9.0",
+        "map-widget": "^4.9.0",
+        "apprt-binding": "^4.9.0"
+    },
+    "CSS-Themes-Extension": [
+        {
+            "name": "*",
+            "files": [
+                "./css/styles.css"
+            ]
+        }
+    ],
+    "layout-widgets": [
+        {
+            "widgetRole": "lineOfSightWidget",
+            "window": {
+                "title": "${ui.windowTitle}",
+                "dockTool": "lineOfSightToggleTool",
+                "closable": true,
+                "maximizable": false,
+                "minimizeOnClose": true,
+                "resizable": true,
+                "marginBox": {
+                    "w": 350,
+                    "h": 214,
+                    "l": 20,
+                    "t": 125
+                },
+                "minSize": {
+                    "w": 350,
+                    "h": 214
+                },
+                "windowClass": "dn_lineofsight__window noPadding"
+            }
+        },
+        {
+            "widgetRole": "lineOfSightWidget",
+            "sublayout": [
+                "mobile_landscape",
+                "mobile_portrait"
+            ],
+            "window": {
+                "dockingBar": "${id}-dockingBarBottomLeft",
+                "draggable": false,
+                "resizable": false,
+                "marginBox": {
+                    "h": 214,
+                    "b": 40,
+                    "r": 0,
+                    "l": 0
+                }
+            }
+        },
+        {
+            "widgetRole": "lineOfSightWidget",
+            "sublayout": [
+                "mobile_landscape"
+            ],
+            "window": {
+                "marginBox": {
+                    "h": 214,
+                    "w": 350,
+                    "b": 0,
+                    "r": 0
+                }
+            }
+        }
+    ],
+    "components": [
+        {
+            "name": "Config",
+            "impl": "./LineOfSightWidgetFactory",
+            "provides": [
+                "dijit.Widget"
+            ],
+            "instanceFactory": true,
+            "properties": {
+                "widgetRole": "lineOfSightWidget"
+            },
+            "references": [
+                {
+                    "name": "_mapWidgetModel",
+                    "providing": "map-widget.MapWidgetModel"
+                }
+            ]
+        },
+        {
+            "name": "LineOfSightToggleTool",
+            "impl": "ct/tools/Tool",
+            "provides": [
+                "ct.tools.Tool"
+            ],
+            "propertiesConstructor": true,
+            "properties": {
+                "id": "lineOfSightToggleTool",
+                "title": "${tool.title}",
+                "tooltip": "${tool.tooltip}",
+                "iconClass": "icon-visibility-visible",
+                "toolRole": "toolset",
+                "togglable": true,
+                "noGroup": true,
+                "rules": {
+                    "viewmode": "3D",
+                    "ruleSuccessProperty": "visibility"
+                }
+            }
+        }
+    ]
+}
