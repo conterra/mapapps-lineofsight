@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 con terra GmbH (info@conterra.de)
+ * Copyright (C) 2023 con terra GmbH (info@conterra.de)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,11 +18,11 @@ module.exports = {
         bundleName: "LineOfSight",
         bundleDescription: "The LineOfSight widget is a 3D analysis tool that allows you to perform visibility analysis in a SceneView. Visibility between a given observer and multiple target points is calculated against the currently displayed content in the view, including ground, integrated meshes and 3D objects such as buildings or trees.",
         ui: {
-            windowTitle: "LineOfSight",
+            windowTitle: "LineOfSight"
         },
         tool: {
             title: "LineOfSight",
-            tooltip: "LineOfSight",
+            tooltip: "LineOfSight"
         }
     },
     de: true

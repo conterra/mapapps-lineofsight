@@ -29,9 +29,6 @@
             "toolset",
             "dn_lineofsight"
         ],
-        "require": [
-            "${app}.app"
-        ],
         "i18n": [
             "bundle"
         ]
