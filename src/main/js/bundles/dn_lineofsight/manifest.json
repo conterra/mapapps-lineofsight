@@ -86,7 +86,8 @@
             "name": "Config",
             "impl": "./LineOfSightWidgetFactory",
             "provides": [
-                "dijit.Widget"
+                "dijit.Widget",
+                "dn_lineofsight.Widget"
             ],
             "instanceFactory": true,
             "properties": {
@@ -117,8 +118,15 @@
                 "rules": {
                     "viewmode": "3D",
                     "ruleSuccessProperty": "visibility"
+                },
+                "deactivateHandler": "deactivateWidget"
+            },
+            "references": [
+                {
+                    "name": "handlerScope",
+                    "providing": "dn_lineofsight.Widget"
                 }
-            }
+            ]
         }
     ]
 }

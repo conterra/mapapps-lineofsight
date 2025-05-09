@@ -25,6 +25,7 @@ export default class LineOfSightWidgetFactory {
     deactivate() {
         this._deactivateBinding();
         this._destroyWidget();
+        this.#lineOfSightWidget.viewModel.stop();
     }
 
     createInstance() {
@@ -39,9 +40,13 @@ export default class LineOfSightWidgetFactory {
             .enable()
             .syncToLeftNow();
 
-        lineOfSightWidget.own(binding);
+        const widget =  new EsriDijit(lineOfSightWidget);
 
-        return new EsriDijit(lineOfSightWidget);
+        widget.deactivateWidget = function () {
+            lineOfSightWidget.viewModel.stop();
+        };
+        widget.own(binding);
+        return widget;
     }
 
     _destroyWidget() {
