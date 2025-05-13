@@ -37,15 +37,15 @@
                 "resizable": true,
                 "marginBox": {
                     "w": 350,
-                    "h": 214,
+                    "h": 220,
                     "l": 20,
                     "t": 125
                 },
                 "minSize": {
                     "w": 350,
-                    "h": 214
+                    "h": 220
                 },
-                "windowClass": "dn_lineofsight__window noPadding"
+                "windowClass": "dn_lineofsight__window"
             }
         },
         {
