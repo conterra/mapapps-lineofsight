@@ -40,7 +40,7 @@ export default class LineOfSightWidgetFactory {
             .enable()
             .syncToLeftNow();
 
-        const widget =  new EsriDijit(lineOfSightWidget);
+        const widget = new EsriDijit(lineOfSightWidget);
 
         widget.deactivateWidget = function () {
             lineOfSightWidget.viewModel.stop();
