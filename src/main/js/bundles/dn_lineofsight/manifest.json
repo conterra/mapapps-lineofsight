@@ -85,7 +85,6 @@
     "components": [
         {
             "name": "Config",
-            "impl": "./LineOfSightWidgetFactory",
             "provides": [
                 "dijit.Widget",
                 "dn_lineofsight.Widget"
