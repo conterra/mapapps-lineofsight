@@ -29,7 +29,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import EsriDijit, {createDijit} from "esri-widgets/EsriDijit";
+import {createDijit} from "esri-widgets/EsriDijit";
 import Binding from "apprt-binding/Binding";
 import LineOfSight from "esri/widgets/LineOfSight";
 import { type MapWidgetModel } from "map-widget/api";
