@@ -21,10 +21,19 @@ export default class LineOfSightWidgetFactory {
 
     #binding = null;
     #lineOfSightWidget = null;
+    #lineOfSightToggleTool;
+    #toolWatchHandle;
 
     deactivate() {
         this._deactivateBinding();
         this._destroyWidget();
+    }
+
+    activate(){
+        const tool = this.#lineOfSightToggleTool;
+        if(tool){
+            this.#registerToolWatcher(tool);
+        }
     }
 
     createInstance() {
@@ -47,10 +56,23 @@ export default class LineOfSightWidgetFactory {
     _destroyWidget() {
         this.#lineOfSightWidget?.destroy();
         this.#lineOfSightWidget = null;
+        this.#toolWatchHandle?.remove();
     }
 
     _deactivateBinding() {
         this.#binding?.unbind();
         this.#binding = null;
+    }
+
+    #registerToolWatcher(tool){
+        this.#toolWatchHandle = tool.watch("active", (_name, _oldValue, newValue) => {
+            if (!newValue){
+                this.#lineOfSightWidget?.viewModel?.stop();
+            }
+        })
+    }
+
+    set lineOfSightToggleTool(tool){
+        this.#lineOfSightToggleTool = tool;
     }
 }
