@@ -69,7 +69,7 @@ export default class LineOfSightWidgetFactory {
             if (!newValue){
                 this.#lineOfSightWidget?.viewModel?.stop();
             }
-        })
+        });
     }
 
     set lineOfSightToggleTool(tool){
