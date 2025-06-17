@@ -32,23 +32,23 @@
 import {createDijit} from "esri-widgets/EsriDijit";
 import Binding from "apprt-binding/Binding";
 import LineOfSight from "esri/widgets/LineOfSight";
-import { type MapWidgetModel } from "map-widget/api";
 
-import { InjectedReference } from "apprt-core/InjectedReference";
+import type { InjectedReference } from "apprt-core/InjectedReference";
+import type { MapWidgetModel } from "map-widget/api";
 
 export default class LineOfSightWidgetFactory {
 
-    _mapWidgetModel: InjectedReference<MapWidgetModel>;
+    private _mapWidgetModel: InjectedReference<MapWidgetModel>;
     private binding?: Binding;
     private lineOfSightWidget?: LineOfSight | any;
 
-    private deactivate(): void {
+    deactivate(): void {
         this.deactivateBinding();
         this.destroyWidget();
         this.lineOfSightWidget?.viewModel.stop();
     }
 
-    private createInstance(): any {
+    createInstance(): any {
         return this.getWidget();
     }
 
