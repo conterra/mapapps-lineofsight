@@ -15,12 +15,17 @@
  */
 module.exports = {
     apptitle: "Line of Sight Sample",
-    custominfo: {
-        imprint: {
-            title: "Impressum",
-            tooltip: "Zeige Impressum",
-            content: "<p>Dies ist ein Beispiel f\xFCr ein Impressum.</p>"
+    map: {
+        basemaps: {
+            gray: "Stra\xDFenkarte (grau)",
+            streets: "Stra\xDFenkarte",
+            topo: "Topographische Karte",
+            hybrid: "Luftbild (hybrid)"
         }
+    },
+    tools: {
+        drawerLeft: "Werkzeuge",
+        measuring: "Messwerkzeuge"
     },
     common: {
         number: "Nummer",
@@ -32,7 +37,7 @@ module.exports = {
         furtherinfo: "Weitere Informationen",
         precint: "Stadtbezirk",
         district: "Stadtviertel",
-        "private": "private",
+        private: "private",
         municipal: "st\xE4dtischer",
         zip: "PLZ",
         type: "Art"

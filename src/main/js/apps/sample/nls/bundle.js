@@ -16,12 +16,17 @@
 module.exports = {
     root: {
         apptitle: "Line of Sight Sample",
-        custominfo: {
-            imprint: {
-                title: "Imprint",
-                tooltip: "Show imprint",
-                content: "<p>This is a sample for an imprint.</p>"
+        map: {
+            basemaps: {
+                gray: "Street Map (gray)",
+                streets: "Street Map",
+                topo: "Topographical Map",
+                hybrid: "Aerial (hybrid)"
             }
+        },
+        tools: {
+            drawerLeft: "Tools",
+            measuring: "Measuring Tools"
         },
         common: {
             number: "Number",
