@@ -417,7 +417,8 @@
                             <goal>deployAppTemplate</goal>
                         </goals>
                         <configuration>
-                            <templateFile>${project.build.directory}/${project.artifactId}-sample-app.zip</templateFile>
+                            <templateFile>
+                                ${project.build.directory}/${project.artifactId}-sample-app.zip</templateFile>
                             <templateResources>
                                 <templateResource>
                                     <directory>${js.build.outputPath}/apps/sample</directory>
@@ -518,6 +519,7 @@
         <skip.apps.upload>true</skip.apps.upload>
         <!-- enable this if "upload" profile should pre-optimize apps -->
         <triggerPreOptimization>false</triggerPreOptimization>
+        <client.config.warnOnSlowGraphicsPerformance>false</client.config.warnOnSlowGraphicsPerformance>
     </properties>
     <profiles>
         <profile>
@@ -633,7 +635,8 @@
                         <artifactId>ct-jsregistry-maven-plugin</artifactId>
                         <executions>
                             <!--
-                            No longer required when the rollup build is in use, because the calculation of the dependencies is done via rollup build.
+                            No longer required when the rollup build is in use, because the calculation of the dependencies is
+                            done via rollup build.
                             -->
                             <execution>
                                 <id>calculate js dependencies</id>
