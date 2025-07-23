@@ -4,6 +4,9 @@ The LineOfSight widget is a 3D analysis tool that allows you to perform visibili
 between a given observer and multiple target points is calculated against the currently displayed content in the view,
 including ground, integrated meshes and 3D objects such as buildings or trees.
 
+## Sample App
+https://demos.conterra.de/mapapps/resources/apps/public_demo_lineofsight/index.html
+
 ## Quick start
 
 Clone this project and ensure that you have all required dependencies installed correctly (see [Documentation](https://docs.conterra.de/en/mapapps/latest/developersguide/getting-started/set-up-development-environment.html)).
