@@ -14,9 +14,9 @@
 /// limitations under the License.
 ///
 
-import {createDijit} from "esri-widgets/EsriDijit";
+import { createDijit } from "esri-widgets/EsriDijit";
 import Binding from "apprt-binding/Binding";
-import LineOfSight from "esri/widgets/LineOfSight";
+import LineOfSight from "@arcgis/core/widgets/LineOfSight";
 
 import type { InjectedReference } from "apprt-core/InjectedReference";
 import type { MapWidgetModel } from "map-widget/api";
