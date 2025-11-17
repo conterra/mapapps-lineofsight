@@ -22,53 +22,9 @@ import { MapCanvas } from "./components/map-canvas";
 // test used to generate a screenshot for the bundle documentation
 test('Create Screenshot for GitHub Page', async ({ page }) => {
     await page.goto('http://localhost:9090/');
-
     const canvas = new MapCanvas(page);
     await canvas.loaded();
-
-    await page.getByRole('button', { name: 'New analysis' }).click();
-    await page.locator('canvas').click({
-        position: {
-            x: 871,
-            y: 336
-        }
-    });
-    await page.locator('canvas').click({
-        position: {
-            x: 531,
-            y: 499
-        }
-    });
-    await page.locator('canvas').click({
-        position: {
-            x: 992,
-            y: 380
-        }
-    });
-    await page.locator('canvas').click({
-        position: {
-            x: 923,
-            y: 509
-        }
-    });
-    await page.locator('canvas').click({
-        position: {
-            x: 798,
-            y: 536
-        }
-    });
-    await page.locator('canvas').dblclick({
-        position: {
-            x: 855,
-            y: 189
-        }
-    });
-    await page.locator('canvas').dblclick({
-        position: {
-            x: 855,
-            y: 189
-        }
-    });
+    await canvas.clickOnMap({ x: 400, y: 400 });
 
     await expectToMatchScreenshot(page, "screenshot.png", {
         timeout: 10000
